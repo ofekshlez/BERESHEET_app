@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background_app">#D69F7E</color>
+    <color name="name_of_the_app">#774936</color>
+    <color name="frame">#DEAB90</color>
+    <color name="brown">#774936</color>
+    <color name="nav_bar">#C38E70</color>
+    <color name="btn_lst">#EDC4B3</color>
+    <color name="red">#FF0000</color>
+</resources>

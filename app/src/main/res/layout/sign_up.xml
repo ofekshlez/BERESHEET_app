@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp"
+    android:background="@color/background_app"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/beresheet_font"
+        android:text="BERESHEET"
+        android:textColor="@color/name_of_the_app"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:background="@drawable/arrow"
+            android:layout_alignParentLeft="true"
+            android:visibility="visible"
+            android:clickable="true"
+            />
+
+        <LinearLayout
+            android:layout_width="308dp"
+            android:layout_height="595dp"
+            android:background="@drawable/background"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/singin"
+                android:text="הרשמה"
+                android:textColor="@color/black"
+                android:textSize="45sp" />
+
+            <EditText
+                android:id="@+id/first_name"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/singin"
+                android:hint="שם פרטי"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/brown"
+                android:textColorHint="@color/brown"/>
+
+            <TextView
+                android:id="@+id/check_first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:textSize="10dp"
+                android:textColor="@color/red"
+                />
+
+            <EditText
+                android:id="@+id/last_name"
+                android:layout_width="144dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/singin"
+                android:gravity="center"
+                android:hint="שם משפחה"
+                android:textColor="@color/brown"
+                android:textColorHint="@color/brown"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/check_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:textSize="10dp"
+                android:textColor="@color/red"
+                />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/singin"
+                android:hint="דואר אלקטרוני"
+                android:textSize="20sp"
+                android:textColor="@color/brown"
+                android:gravity="center"
+                android:textColorHint="@color/brown"
+                />
+
+            <TextView
+                android:id="@+id/check_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:textSize="10dp"
+                android:textColor="@color/red"
+                />
+
+            <EditText
+                android:id="@+id/id"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/singin"
+                android:hint="תעודת זהות"
+                android:textSize="20sp"
+                android:textColor="@color/brown"
+                android:gravity="center"
+                android:textColorHint="@color/brown"/>
+
+            <TextView
+                android:id="@+id/check_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:textSize="10dp"
+                android:textColor="@color/red"
+                />
+
+            <!--בית ספר-->
+            <Spinner
+                android:id="@+id/school"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/edit_text"
+                android:spinnerMode="dropdown"
+                android:fontFamily="@font/singin"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="@color/brown"
+                />
+
+            <TextView
+                android:id="@+id/check_school"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:textSize="10dp"
+                android:textColor="@color/red"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/birthday"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/singin"
+                android:text="תאריך לידה"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="@color/brown"
+                />
+
+            <TextView
+                android:id="@+id/check_birthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:textSize="10dp"
+                android:textColor="@color/red"
+                />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/singin"
+                android:hint="סיסמה"
+                android:textSize="20sp"
+                android:textColor="@color/brown"
+                android:gravity="center"
+                android:textColorHint="@color/brown"/>
+
+            <TextView
+                android:id="@+id/check_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:textSize="10dp"
+                android:textColor="@color/red"
+                />
+
+            <EditText
+                android:id="@+id/same_password"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/singin"
+                android:hint="אימות סיסמה"
+                android:textSize="20sp"
+                android:textColor="@color/brown"
+                android:gravity="center"
+                android:textColorHint="@color/brown"/>
+
+            <TextView
+                android:id="@+id/check_same_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:textSize="10dp"
+                android:textColor="@color/red"
+                />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layoutDirection="rtl"
+                android:orientation="horizontal"
+                >
+
+                <RadioButton
+                    android:id="@+id/student"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:checked="true"
+                    android:layoutDirection="rtl"
+                    android:text="תלמיד"
+                    android:textSize="25sp" />
+
+                <RadioButton
+                    android:id="@+id/teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:layoutDirection="rtl"
+                    android:text="מורה"
+                    android:textSize="25sp" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/brown"
+                android:text="הירשם"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

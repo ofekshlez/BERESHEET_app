@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TasksFragment"
+    android:background="@color/background_app">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="BERESHEET"
+            android:textColor="@color/name_of_the_app"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="משימות"
+            android:textColor="@color/name_of_the_app"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+
+
+        <LinearLayout
+            android:layout_width="310dp"
+            android:layout_height="455dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/background"
+            android:gravity="center_horizontal"
+            android:textDirection="rtl">
+
+            <ListView
+                android:id="@+id/lst"
+                android:layout_width="wrap_content"
+                android:layout_height="418dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15sp"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="10.0sp"
+                android:scrollbarThumbVertical="@color/brown"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

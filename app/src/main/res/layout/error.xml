@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/border">
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="קיימת בעיה, נסה שוב בקרוב"
+        android:textColor="@color/brown"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_signIn"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="left"
+            android:background="@drawable/next"
+            android:clickable="true"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/next_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="התנתק"
+            android:textColor="@color/brown"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</LinearLayout>

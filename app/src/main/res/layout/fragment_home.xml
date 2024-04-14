@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment"
+    android:background="@color/background_app">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="BERESHEET"
+            android:textColor="@color/name_of_the_app"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="חידונים"
+            android:textColor="@color/name_of_the_app"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="310dp"
+            android:layout_height="455dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/background"
+            android:gravity="center_horizontal"
+            android:textDirection="rtl"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/torah"
+                android:layout_width="280dp"
+                android:layout_height="81dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/btn_for_quiz"
+                android:text="תורה"
+                android:textColor="@color/brown"
+                android:textSize="40sp"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/neviim"
+                android:layout_width="280dp"
+                android:layout_height="81dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_for_quiz"
+                android:text="נביאים"
+                android:textColor="@color/brown"
+                android:textSize="40sp"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ketuvim"
+                android:layout_width="280dp"
+                android:layout_height="81dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_for_quiz"
+                android:text="כתובים"
+                android:textColor="@color/brown"
+                android:textSize="40sp"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/earth"
+                android:layout_width="280dp"
+                android:layout_height="81dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_for_quiz"
+                android:text="כדור הארץ"
+                android:textColor="@color/brown"
+                android:textSize="40sp"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/quizzes"
+                android:layout_width="280dp"
+                android:layout_height="81dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_for_quiz"
+                android:text="חידוני תנך"
+                android:textColor="@color/brown"
+                android:textSize="40sp"
+                />
+
+
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

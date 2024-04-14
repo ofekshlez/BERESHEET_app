@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoFragment"
+    android:orientation="vertical"
+    android:background="@color/background_app"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="BERESHEET"
+            android:textColor="@color/name_of_the_app"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="מידע"
+            android:textColor="@color/name_of_the_app"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="310dp"
+            android:layout_height="494dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/background"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:textDirection="rtl">
+
+            <LinearLayout
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/background"
+                android:backgroundTint="@color/btn_lst"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/singin"
+                    android:text="שם מלא:"
+                    android:textColor="@color/brown"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/full_name"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="full name"
+                    android:textColor="@color/brown"
+                    android:textSize="40sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background"
+                android:backgroundTint="@color/btn_lst"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/singin"
+                    android:text="תעודת זהות:"
+                    android:textColor="@color/brown"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/id"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="ID"
+                    android:textColor="@color/brown"
+                    android:textSize="40sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="280dp"
+                android:layout_height="93dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background"
+                android:backgroundTint="@color/btn_lst"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/singin"
+                    android:text="בית ספר:"
+                    android:textColor="@color/brown"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/school"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="school"
+                    android:textColor="@color/brown"
+                    android:textSize="30sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="280dp"
+                android:layout_height="93dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background"
+                android:backgroundTint="@color/btn_lst"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/singin"
+                    android:text="דואר אלקטרוני:"
+                    android:textColor="@color/brown"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="email"
+                    android:textColor="@color/brown"
+                    android:textSize="30sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/background"
+                android:backgroundTint="@color/btn_lst"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:fontFamily="@font/singin"
+                    android:text="תפקיד:"
+                    android:textColor="@color/brown"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/job"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="job"
+                    android:textColor="@color/brown"
+                    android:textSize="40sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

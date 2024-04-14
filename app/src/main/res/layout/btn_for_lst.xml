@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:backgroundTint="@color/btn_lst"
+    android:gravity="center_horizontal"
+    android:layout_gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/quiz_name"
+        android:layout_width="308dp"
+        android:layout_height="80dp"
+        android:text="quiz name"
+        android:textColor="@color/brown"
+        android:textSize="40sp"
+        android:gravity="center"
+        />
+
+</LinearLayout>

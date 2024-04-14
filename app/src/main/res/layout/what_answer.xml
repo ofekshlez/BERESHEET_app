@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/border">
+    <TextView
+        android:id="@+id/question_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="מספר שאלה"
+        android:textSize="40sp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/brown"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="כאן תופיע השאלה"
+        android:textSize="25sp"
+        android:textColor="@color/brown"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="התשובה שסימנת:"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/brown"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layoutDirection="rtl">
+        <ImageView
+            android:id="@+id/imgOfChosenAnswer"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="15dp" />
+        <TextView
+            android:id="@+id/chosenAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:text="כאן תופיע התשובה שבחרת"
+            android:textColor="@color/brown" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="התשובה הנכונה:"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/brown"
+        android:layout_marginRight="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layoutDirection="rtl">
+        <ImageView
+            android:id="@+id/imgOfRightAnswer"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/right"/>
+        <TextView
+            android:id="@+id/rightAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:text="כאן תופיע התשובה הנכונה"
+            android:textColor="@color/brown" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="left"
+            android:background="@drawable/next"
+            android:clickable="true"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/next_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="חזור"
+            android:textColor="@color/brown"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</LinearLayout>
