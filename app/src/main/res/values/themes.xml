@@ -8,7 +8,9 @@
     </style>
 
     <style name="Theme.App" parent="Theme.MaterialComponents">
-        <item name="bottomNavigationStyle">@style/Widget.MaterialComponents.BottomNavigationView.Colored</item>
+        <item name="bottomNavigationStyle">
+            @style/Widget.MaterialComponents.BottomNavigationView.Colored
+        </item>
         <item name="colorPrimary">@color/nav_bar</item>
         <item name="colorPrimaryVariant">@color/nav_bar</item>
     </style>

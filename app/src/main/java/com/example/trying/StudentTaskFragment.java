@@ -27,33 +27,30 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-public class TasksFragment extends Fragment {
+public class StudentTaskFragment extends Fragment implements View.OnClickListener {
     ListView lst;
     ArrayList<Task> taskArrayList;
     TaskAdapter taskAdapter;
     String strReceived, jsonString;
-    TextView taskH;
+    TextView studentName;
     Dialog d;
     Bundle bundle;
+    Button btn_back;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tasks, container, false);
+        View view = inflater.inflate(R.layout.fragment_student_task, container, false);
         bundle = this.getArguments();
         try {
             jsonString = new JSONObject()
-                    .put("id", bundle.getString("id"))
+                    .put("id", bundle.getString("studentID"))
                     .put("function", "tasks")
                     .toString();
             sendData(jsonString);
             if (strReceived.equals("error")) {
                 dialogE(view);
             }
-            else if (strReceived.equals("0")) {
-                taskH = (TextView)view.findViewById(R.id.taskH);
-                taskH.setText("אין משימות");
-            }
-            else {
+            else if(!strReceived.equals("0")) {
                 String[] fromS = strReceived.split("/", 0);
                 taskArrayList = new ArrayList<Task>();
                 for (int i = 0; i < fromS.length; i++) {
@@ -63,23 +60,25 @@ public class TasksFragment extends Fragment {
                 taskAdapter = new TaskAdapter(view.getContext(), 0, 0, taskArrayList);
                 lst = (ListView)view.findViewById(R.id.lst);
                 lst.setAdapter(taskAdapter);
-                lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        Task lastSelected = taskAdapter.getItem(i);
-                        String name = lastSelected.getName();
-                        String[] temp = name.split(" ");
-                        bundle.putInt("quiz num" ,Integer.valueOf(temp[1]));
-                        bundle.putString("quiz", lastSelected.getPlace());
-                        bundle.putChar("place", 'T');
-                        replaceFragment(new QuizFragment());
-                    }
-                });
             }
         } catch (JSONException e) {
             dialogE(view);
         }
+
+        studentName = (TextView)view.findViewById(R.id.studentName);
+        studentName.setText(bundle.getString("studentN"));
+
+        btn_back = (Button)view.findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(this);
+
         return view;
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == btn_back) {
+            replaceFragment(new StudentsFragment());
+        }
     }
 
     private void signOut(){
@@ -123,4 +122,5 @@ public class TasksFragment extends Fragment {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
+
 }

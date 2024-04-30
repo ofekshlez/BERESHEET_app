@@ -67,6 +67,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
+
         getInfo(jsonString);
         String[] info = strReceived.split("/", 0);
         System.out.println(strReceived);

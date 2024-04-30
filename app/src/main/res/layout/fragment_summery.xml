@@ -117,7 +117,8 @@
                     android:id="@+id/next_end"
                     android:layout_width="70sp"
                     android:layout_height="wrap_content"
-                    android:text="חזרה לדף הבית"
+                    android:text="חזרה"
+                    android:gravity="center"
                     android:textColor="@color/brown"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -134,6 +135,7 @@
                     android:layout_width="50sp"
                     android:layout_height="wrap_content"
                     android:text="נסה שוב"
+                    android:gravity="center"
                     android:textColor="@color/brown"
                     android:textStyle="bold"/>
 

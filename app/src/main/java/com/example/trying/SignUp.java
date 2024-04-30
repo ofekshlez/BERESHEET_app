@@ -1,7 +1,6 @@
 package com.example.trying;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
@@ -16,12 +15,13 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -29,14 +29,14 @@ import java.util.regex.Pattern;
 public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     Button btn_back, btn_signup, btn_birthday;
-    RadioButton teacher, student;
+    RadioButton teacher;
     Spinner school;
     Dialog d;
     TextView check_email, check_first_name, check_last_name,
             check_birthday, check_id, check_school, check_password, check_same_password;
     EditText email, first_name, last_name, id, password, same_password;
     String strReceived, jsonString;
-    String letters = "abcdefghijklmnopqrstuvwxyzABCDEFJHIJKLMNOPQRSTUVWXYZ";
+    String letters = "abcdefghijklmnopqrstuvwxyzABCDEFJHIJKLMNOPQRSTUVWXYZאבגדהוזחטיכךלמנסעפףצץקרשת";
 
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
             Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
@@ -82,21 +82,32 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     job = "teacher";
                 }
                 try {
+                    RSAEncryptor rsa = new RSAEncryptor(182477, 821);
+                    int key = (int)(Math.random()*75)+1;
                     jsonString = new JSONObject()
-                                .put("id", id.getText().toString())
-                                .put("first name", first_name.getText().toString())
-                                .put("last name", last_name.getText().toString())
-                                .put("email", email.getText().toString())
+                                .put("id", encryptID(id.getText().toString()))
+                                .put("first name", encryption(first_name.getText().toString(), key))
+                                .put("last name", encryption(last_name.getText().toString(), key))
+                                .put("email", encryption(email.getText().toString(), key))
                                 .put("school", school.getSelectedItem().toString())
-                                .put("password", password.getText().toString())
+                                .put("password", encryption(password.getText().toString(), key))
+                                .put("birthday", btn_birthday.getText().toString())
                                 .put("job", job)
                                 .put("function", "signUp")
+                                .put("key", rsa.encrypt("key:" + key))
                                 .toString();
                     sendData(jsonString);
                     if (strReceived.equals("true")) {
-                        Intent intent = new Intent(this, MainActivity.class);
-                        intent.putExtra("id", id.getText().toString());
-                        startActivity(intent);
+                        if (job.equals("student")) {
+                            Intent intent = new Intent(this, MainActivity.class);
+                            intent.putExtra("id", encryptID(id.getText().toString()));
+                            startActivity(intent);
+                        }
+                        else {
+                            Intent intent = new Intent(this, MainActivity2.class);
+                            intent.putExtra("id", encryptID(id.getText().toString()));
+                            startActivity(intent);
+                        }
                     } else if (strReceived.equals("false")) {
                         System.out.println("else");
                         Toast.makeText(this,"משתמש קיים כבר עם תעודת הזהות", Toast.LENGTH_LONG).show();
@@ -294,22 +305,10 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    public String crack(String encrypt, int key) {
-        String newM = "";
-        for (int i = 0; i < encrypt.length(); i++) {
-            int place = letters.indexOf(encrypt.charAt(i)) - key;
-            if (place < 0)
-                place = place + letters.length();
-            newM += letters.charAt(place);
-        }
-        return newM;
-    }
-
     public String encryption(String message, int key) {
         String newM = "";
         for (int i = 0; i < message.length(); i++) {
             int index = letters.indexOf(message.charAt(i));
-            Log.e("TAG", " " + message.charAt(i));
             if (index == -1) {
                 newM += message.charAt(i);
             }
@@ -321,6 +320,26 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             }
         }
         return newM;
+    }
+
+    public String encryptID(String id) {
+        Map<Character, Character> dic = new HashMap<Character, Character>();
+        // Inserting pairs in above Map
+        dic.put('1', '^');
+        dic.put('2', '$');
+        dic.put('3', '*');
+        dic.put('4', '&');
+        dic.put('5', '%');
+        dic.put('6', '@');
+        dic.put('7', '#');
+        dic.put('8', '!');
+        dic.put('9', ')');
+        dic.put('0', '(');
+        String newID = "";
+        for (int i = 0; i < id.length(); i++) {
+            newID += dic.get(id.charAt(i));
+        }
+        return newID;
     }
 
 }

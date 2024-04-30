@@ -25,13 +25,13 @@ public class SocketTask extends AsyncTask<String, Void, String> {
     //private final static String IP_ADDRESS = "192.168.1.164"; //Eyal's ip
 
 
-    private final static int PORT = 5000; //HTTP port
+    private final static int PORT = 7777; //HTTP port
     private final static int PACKET_SIZE = 2048; //standard 1kb packet size
     private Socket socket;
     private String sendingStr="";
     private String receivingStr="";
     BufferedReader reader;
-    private final static int CONNECTION_TIMEOUT = 3500;
+    private final static int CONNECTION_TIMEOUT = 5000;
 
     public SocketTask(String str1) {
         this.sendingStr = str1;
@@ -40,6 +40,7 @@ public class SocketTask extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... arrStrings)
     {
+        System.out.println("hello");
         try {
             this.socket = new Socket();
             InetSocketAddress socketAddress = new InetSocketAddress(IP_ADDRESS, PORT);
@@ -63,6 +64,7 @@ public class SocketTask extends AsyncTask<String, Void, String> {
             Log.d("Result", "sent");
         }
         catch (Exception e) {
+            System.out.println("problem");
             Log.e("Exception", e.toString());
             this.receivingStr = "error";
         }
@@ -77,6 +79,7 @@ public class SocketTask extends AsyncTask<String, Void, String> {
             reader.close();
         }
         catch (IOException e) {
+            System.out.println("problem 2");
             Log.e("Exception", e.toString());
             this.receivingStr = "error";
         }

@@ -28,7 +28,7 @@ public class SummeryFragment extends Fragment implements View.OnClickListener {
     ListView lst1, lst2;
     ArrayList<Result> resultArrayList1, resultArrayList2;
     ResultAdapter resultAdapter1, resultAdapter2;
-    Button btn_again, btn_home, btn_back;
+    Button btn_again, btn_back;
     Dialog d;
     Bundle bundle;
 
@@ -92,8 +92,8 @@ public class SummeryFragment extends Fragment implements View.OnClickListener {
         lst2 = (ListView)view.findViewById(R.id.lst2);
         lst2.setAdapter(resultAdapter2);
 
-        btn_home = (Button)view.findViewById(R.id.btn_home);
-        btn_home.setOnClickListener(this);
+        btn_back = (Button)view.findViewById(R.id.btn_home);
+        btn_back.setOnClickListener(this);
         btn_again = (Button)view.findViewById(R.id.btn_again);
         btn_again.setOnClickListener(this);
 
@@ -192,8 +192,11 @@ public class SummeryFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        if (view == btn_home) {
-            replaceFragment(new HomeFragment());
+        if (view == btn_back) {
+            if (bundle.getChar("place") == 'H')
+                replaceFragment(new HomeFragment());
+            else
+                replaceFragment(new TasksFragment());
         }
         else if (view == btn_again) {
             bundle.putString("quiz", bundle.getString("quiz"));

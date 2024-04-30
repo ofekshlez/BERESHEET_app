@@ -19,7 +19,7 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class LstOf2Fragment extends Fragment {
+public class Lst2Fragment extends Fragment {
     ListView lst;
     ArrayList<Quiz> quizzesList;
     QuizAdapter quizAdapter;
@@ -37,7 +37,7 @@ public class LstOf2Fragment extends Fragment {
             quizzesList.add(new Quiz("חידון " + (i+1)));
         }
 
-        View view = inflater.inflate(R.layout.fragment_lstof2, container, false);
+        View view = inflater.inflate(R.layout.fragment_lst2, container, false);
         quizAdapter = new QuizAdapter(view.getContext(), 0, 0, quizzesList);
         lst = (ListView)view.findViewById(R.id.lst);
         lst.setAdapter(quizAdapter);
@@ -49,7 +49,7 @@ public class LstOf2Fragment extends Fragment {
             public void onClick(View v) {
                 bundle.putString("id", bundle.getString("id"));
                 bundle.putString("quizB", bundle.getString("quizB"));
-                replaceFragment(new LstOfFragment());
+                replaceFragment(new LstFragment());
             }
         });
         lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -61,7 +61,7 @@ public class LstOf2Fragment extends Fragment {
                 bundle.putInt("quiz num" ,Integer.valueOf(temp[1]));
                 bundle.putString("quiz", quiz);
                 bundle.putChar("place", 'H');
-                replaceFragment(new QuizFragment());
+                replaceFragment(new Quiz2Fragment());
             }
         });
 

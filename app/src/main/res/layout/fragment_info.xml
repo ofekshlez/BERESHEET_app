@@ -90,16 +90,16 @@
                     android:layout_gravity="right"
                     android:layout_marginRight="20dp"
                     android:fontFamily="@font/singin"
-                    android:text="תעודת זהות:"
+                    android:text="תאריך לידה:"
                     android:textColor="@color/brown"
                     android:textSize="25dp" />
 
                 <TextView
-                    android:id="@+id/id"
+                    android:id="@+id/bd"
                     android:layout_width="280dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="ID"
+                    android:text="BD"
                     android:textColor="@color/brown"
                     android:textSize="40sp" />
 

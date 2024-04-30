@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LstOf2Fragment"
+    tools:context=".StudentTaskFragment"
     android:background="@color/background_app">
 
     <LinearLayout
@@ -23,11 +23,11 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/sub_title"
+            android:id="@+id/studentName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="תת נושא"
+            android:text="שם התלמיד"
             android:textColor="@color/name_of_the_app"
             android:textSize="50sp"
             android:textStyle="bold" />
@@ -60,7 +60,7 @@
                 android:dividerHeight="10.0sp"
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="15sp"
-                android:clickable="true"
+                android:clickable="false"
                 android:scrollbarThumbVertical="@color/brown"/>
 
         </LinearLayout>

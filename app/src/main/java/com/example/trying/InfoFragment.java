@@ -22,16 +22,17 @@ import java.util.concurrent.ExecutionException;
 
 public class InfoFragment extends Fragment {
     View view;
-    TextView full_name, id, school, email, job;
+    TextView full_name, bd, school, email, job;
     String strReceived, jsonString;
     Dialog d;
+    String letters = "abcdefghijklmnopqrstuvwxyzABCDEFJHIJKLMNOPQRSTUVWXYZאבגדהוזחטיכךלמנסעפףצץקרשת";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_info, container, false);
         full_name = (TextView)view.findViewById(R.id.full_name);
-        id = (TextView)view.findViewById(R.id.id);
+        bd = (TextView)view.findViewById(R.id.bd);
         school = (TextView)view.findViewById(R.id.school);
         email = (TextView)view.findViewById(R.id.email);
         job = (TextView)view.findViewById(R.id.job);
@@ -52,7 +53,7 @@ public class InfoFragment extends Fragment {
 
         if (strReceived.equals("error")) {
             full_name.setText("לא ידוע");
-            id.setText("לא ידוע");
+            bd.setText("לא ידוע");
             school.setText("לא ידוע");
             email.setText("לא ידוע");
             email.setTextSize(40);
@@ -73,10 +74,10 @@ public class InfoFragment extends Fragment {
         else {
             String[] info = strReceived.split(",", 0);
             System.out.println(strReceived);
-            full_name.setText(info[0]);
-            id.setText(idN);
+            full_name.setText(crack(info[0], 15));
+            bd.setText(info[4]);
             school.setText(info[1]);
-            email.setText(info[2]);
+            email.setText(crack(info[2], 15));
             job.setText(info[3]);
         }
 
@@ -101,4 +102,20 @@ public class InfoFragment extends Fragment {
         }
     }
 
+    public String crack(String encrypt, int key) {
+        String newM = "";
+        for (int i = 0; i < encrypt.length(); i++) {
+            int place = letters.indexOf(encrypt.charAt(i));
+            if (place == -1) {
+                newM += encrypt.charAt(i);
+            }
+            else {
+                place -= key;
+                if (place < 0)
+                    place = place + letters.length();
+                newM += letters.charAt(place);
+            }
+        }
+        return newM;
+    }
 }

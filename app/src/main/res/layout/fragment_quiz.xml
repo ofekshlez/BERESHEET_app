@@ -60,6 +60,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="110dp"
                 android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/brown"
                 android:text="כאן תהיה רשומה השאלה"
                 android:textSize="20sp" />
 
